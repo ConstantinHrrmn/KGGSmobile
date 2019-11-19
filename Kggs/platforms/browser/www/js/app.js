@@ -17,6 +17,10 @@ var app = new Framework7({
       url: 'index.html',
     },
     {
+      path: '/staff/',
+      url: 'pages/Staff.html',
+    },
+    {
       path: '/single/',
       url: 'pages/single.html',
     },
