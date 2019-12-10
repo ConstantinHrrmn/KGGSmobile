@@ -1,906 +1,464 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- Required meta tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>KidsGames 2020</title>
-    <link rel="stylesheet" href="css/framework7.ios.min.css">
-    <link rel="stylesheet" href="css/ionicons.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body class="color-theme-pink">
-    <!-- App root element -->
-    <div id="app">
-      <div class="views tabs">
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Apptastic</title>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+<link rel="stylesheet" type="text/css" href="styles/framework.css">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
-        <!-- Main view -->
-        <div id="view-today" class="view view-main tab tab-active">
-          <div data-name="home" class="page no-navbar">
-            <!-- Scrollable page content -->
-            <div class="page-content ptr-content infinite-scroll-content" data-infinite-distance="70">
-              <div class="ptr-preloader">
-                <div class="preloader"></div>
-                <div class="ptr-arrow"></div>
-              </div>
+</head>
 
-              <div class="block" id="today-content">
-                <div class="title-container">
-                  <span class="title-date" id="Todaysate">Tuesday 19 March</span>
-                  <h1>Today</h1>
-                </div>
+<body>
+    
+<div id="preloader" class="preloader-light">
+    <h1></h1>
+    <div id="preload-spinner"></div>
+    <p>The Ultimate Mobile Experience</p>
+    <em>This will only take a second. It's totally worth it!</em>
+</div>
+        
+<div id="page-transitions" class="page-build light-skin highlight-blue">    
+    <div id="menu-hider"></div>
+    
+    <div id="menu-list" data-selected="menu-index" data-load="menu-list.html" data-height="415" class="menu-box menu-load menu-bottom"></div>    
+    <div id="menu-demo" data-load="menu-demo.html" data-height="210" class="menu-box menu-load menu-bottom"></div>
+    <div id="menu-find" data-load="menu-find.html" data-height="420" class="menu-box menu-load menu-bottom"></div>
 
-                <a href="/single/">
-                  <div class="card">
-                    <img class="card-image" src="img/kggs/programme.jpg" alt="">
-                    <div class="card-infos">
-                      <h2 class="card-title">PROGRAMME</h2>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="/single/">
-                  <div class="card">
-                    <img class="card-image" src="img/kggs/Teams.jpg" alt="">
-                    <div class="card-infos">
-                      <h2 class="card-title">LES EQUIPES</h2>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="/single/">
-                  <div class="card">
-                    <img class="card-image" src="img/kggs/staff.jpg" alt="">
-                    <div class="card-infos">
-                      <h2 class="card-title">LE STAFF</h2>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
+    <div class="header header-scroll-effect">
+        <div class="header-line-1 header-hidden header-logo-left">
+            <a href="#" class="back-button header-logo-image"></a>
+            <a href="#" data-menu="menu-find" class="header-icon header-icon-3"><i class="fa fa-search"></i></a>
+            <a href="#" data-menu="menu-list" class="header-icon header-icon-4"><i class="fa fa-bars"></i></a>
+            <a href="#" data-menu="menu-demo" class="header-icon header-icon-2"><i class="fa fa-cog"></i></a>
         </div>
-
-        <!-- Categories View -->
-        <div id="view-programme" class="view tab">
-          <div data-name="categories" class="page no-navbar">
-            <!-- Scrollable page content -->
-            <div class="page-content">
-              <div class="block">
-                <div class="title-container">
-                  <h1>Categories</h1>
-                </div>
-
-                
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Discover View -->
-        <div id="view-discover" class="view tab">
-          <div data-name="discover" class="page no-navbar">
-            <!-- Scrollable page content -->
-            <div class="page-content">
-              <div class="discover-gradient">
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="white" points="0,100 100,0 100,100"/></svg>
-              </div>
-              <div class="block">
-                <div class="title-container white">
-                  <span class="title-date">This Week</span>
-                  <div class="title-with-link">
-                    <h1>Discover</h1>
-                    <i class="icon ion-ios-star"></i>
-                  </div>
-                </div>
-              </div>
-              <div id="discover-swiper" class="swiper-container">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card">
-                        <img class="card-image" src="img/thumb-36.jpg" alt="">
-                        <div class="card-infos">
-                          <h2 class="card-title">NASA Chooses Its Next Chief Scientist</h2>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card">
-                        <img class="card-image" src="img/thumb-19.jpg" alt="">
-                        <div class="card-infos">
-                          <h2 class="card-title">Jeffrey Campbell's New Shoes Models</h2>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card">
-                        <img class="card-image" src="img/thumb-41.jpg" alt="">
-                        <div class="card-infos">
-                          <h2 class="card-title">The Best Models of Sunglasses to Go out This Summer</h2>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card">
-                        <img class="card-image" src="img/thumb-37.jpg" alt="">
-                        <div class="card-infos">
-                          <h2 class="card-title">Soprano Announces His New Album</h2>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card">
-                        <img class="card-image" src="img/thumb-40.jpg" alt="">
-                        <div class="card-infos">
-                          <h2 class="card-title">Will Conor Return to the UFC Octagon?</h2>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="block">
-                <div class="title-medium-container title-with-link">
-                  <h2>Popular Authors</h2>
-                  <a href="/author-list/" class="col button button-small button-round button-fill">See All</a>
-                </div>
-                <ul class="popular-authors">
-                  <li>
-                    <a href="/author/">
-                      <div class="author-image"><img src="img/authors/author-3.jpg" alt=""></div>
-                      <div class="author-infos">
-                        <div class="author-name">Jess Roxana</div>
-                        <div class="author-description">NBA & NFL Journalist</div>
-                      </div>
-                      <div class="author-star"><i class="icon ion-ios-star"></i></div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/author/">
-                      <div class="author-image"><img src="img/authors/author-2.jpg" alt=""></div>
-                      <div class="author-infos">
-                        <div class="author-name">Zorka Ivka</div>
-                        <div class="author-description">Graphist and Webdesigner</div>
-                      </div>
-                      <div class="author-star"><i class="icon ion-ios-star"></i></div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/author/">
-                      <div class="author-image"><img src="img/authors/author-1.jpg" alt=""></div>
-                      <div class="author-infos">
-                        <div class="author-name">Camille Aline</div>
-                        <div class="author-description">Fashion & Mode Worker</div>
-                      </div>
-                      <div class="author-star"><i class="icon ion-ios-star"></i></div>
-                    </a>
-                  </li>
-                </ul>
-                <div class="title-medium-container">
-                  <h2>The Fashion Week</h2>
-                </div>
-              </div>
-              <div id="discover-swiper2" class="swiper-container medium-card-slider style-2">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card">
-                        <img class="card-image" src="img/thumb-20.jpg" alt="">
-                      </div>
-                      <div class="card-infos">
-                        <h2 class="card-title">Best Clothes Showed on Fashion Week</h2>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card">
-                        <img class="card-image" src="img/thumb-21.jpg" alt="">
-                      </div>
-                      <div class="card-infos">
-                        <h2 class="card-title">What Future for Milan Fashion Week?</h2>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card">
-                        <img class="card-image" src="img/thumb-22.jpg" alt="">
-                      </div>
-                      <div class="card-infos">
-                        <h2 class="card-title">10 Unusual Jewels Spotted at Fashion Week</h2>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card">
-                        <img class="card-image" src="img/thumb-23.jpg" alt="">
-                      </div>
-                      <div class="card-infos">
-                        <h2 class="card-title">Monica Bellucci Will Be Present This Year</h2>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card">
-                        <img class="card-image" src="img/thumb-24.jpg" alt="">
-                      </div>
-                      <div class="card-infos">
-                        <h2 class="card-title">Milan Fashion Week: Giorgio Armani Show</h2>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="block">
-                <div class="title-medium-container title-with-link">
-                  <h2>In Lifestyle</h2>
-                  <a href="/category/" class="col button button-small button-round button-fill">See All</a>
-                </div>
-                <ul class="list media-list post-list">
-                  <li>
-                    <a href="/single/">
-                      <div class="item-content">
-                        <div class="item-media"><img src="img/thumb-25.jpg" alt=""></div>
-                        <div class="item-inner">
-                          <div class="item-subtitle">Fashion</div>
-                          <div class="item-title">The Best Diet for a Flatter Belly</div>
-                          <div class="item-subtitle bottom-subtitle"><i class="icon ion-md-time"></i>2 hours ago</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/single/">
-                      <div class="item-content">
-                        <div class="item-media"><img src="img/thumb-26.jpg" alt=""></div>
-                        <div class="item-inner">
-                          <div class="item-subtitle">Science</div>
-                          <div class="item-title">Here Are the Five Best Fruits of the Summer</div>
-                          <div class="item-subtitle bottom-subtitle"><i class="icon ion-md-time"></i>3 days ago</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/single/">
-                      <div class="item-content">
-                        <div class="item-media"><img src="img/thumb-27.jpg" alt=""></div>
-                        <div class="item-inner">
-                          <div class="item-subtitle">Beatles</div>
-                          <div class="item-title">Were Vegetables Better Before?</div>
-                          <div class="item-subtitle bottom-subtitle"><i class="icon ion-md-time"></i>Last week</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-                <div class="title-medium-container">
-                  <h2>Must See</h2>
-                </div>
-              </div>
-              <div id="discover-swiper3" class="swiper-container">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card medium">
-                        <img class="card-image" src="img/thumb-28.jpg" alt="">
-                        <div class="card-infos">
-                          <div class="card-date"><i class="icon ion-md-time"></i>2 days ago</div>
-                          <h2 class="card-title">Edmond at the Royal Palace Theatre</h2>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card medium">
-                        <img class="card-image" src="img/thumb-42.jpg" alt="">
-                        <div class="card-infos">
-                          <div class="card-date"><i class="icon ion-md-time"></i>4 days ago</div>
-                          <h2 class="card-title">Booba on Fire in His New Gotham Clip</h2>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card medium">
-                        <img class="card-image" src="img/thumb-29.jpg" alt="">
-                        <div class="card-infos">
-                          <div class="card-date"><i class="icon ion-md-time"></i>3 weeks ago</div>
-                          <h2 class="card-title">15 Cheap Outing Ideas in London</h2>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#" data-href="/single/">
-                      <div class="card medium">
-                        <img class="card-image" src="img/thumb-30.jpg" alt="">
-                        <div class="card-infos">
-                          <div class="card-date"><i class="icon ion-md-time"></i>1 month ago</div>
-                          <h2 class="card-title">Ariana Grande Announces a New Fragrance</h2>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="block">
-                <div class="title-medium-container">
-                  <h2>Popular Last Week</h2>
-                </div>
-                <ul class="list media-list post-list">
-                  <li>
-                    <a href="/single/">
-                      <div class="item-content">
-                        <div class="item-media"><img src="img/thumb-31.jpg" alt=""></div>
-                        <div class="item-inner">
-                          <div class="item-subtitle">Fashion</div>
-                          <div class="item-title">The Crocodile, Man's Best Friend?</div>
-                          <div class="item-subtitle bottom-subtitle"><i class="icon ion-md-time"></i>4 hours ago</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/single/">
-                      <div class="item-content">
-                        <div class="item-media"><img src="img/thumb-32.jpg" alt=""></div>
-                        <div class="item-inner">
-                          <div class="item-subtitle">Science</div>
-                          <div class="item-title">7 Accessories to Pack This Summer</div>
-                          <div class="item-subtitle bottom-subtitle"><i class="icon ion-md-time"></i>6 days ago</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/single/">
-                      <div class="item-content">
-                        <div class="item-media"><img src="img/thumb-33.jpg" alt=""></div>
-                        <div class="item-inner">
-                          <div class="item-subtitle">Beatles</div>
-                          <div class="item-title">Mylene Farmer Will Unveil Her New Single on Friday</div>
-                          <div class="item-subtitle bottom-subtitle"><i class="icon ion-md-time"></i>Last week</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/single/">
-                      <div class="item-content">
-                        <div class="item-media"><img src="img/thumb-34.jpg" alt=""></div>
-                        <div class="item-inner">
-                          <div class="item-subtitle">Fashion</div>
-                          <div class="item-title">Holidays Abroad: Leave Reassured!</div>
-                          <div class="item-subtitle bottom-subtitle"><i class="icon ion-md-time"></i>Last month</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Search View -->
-        <div id="view-search" class="view tab">
-          <div data-name="search" class="page no-navbar">
-            <div class="page-content page-search">
-              <div class="searchbar-backdrop"></div>
-              <div class="block searchbar-container">
-                <div class="title-container">
-                  <h1>Search</h1>
-                </div>
-                <form class="searchbar">
-                  <div class="searchbar-inner">
-                    <div class="searchbar-input-wrap">
-                      <input type="search" placeholder="Search">
-                      <i class="searchbar-icon"></i>
-                      <span class="input-clear-button"></span>
-                    </div>
-                    <span class="searchbar-disable-button">Cancel</span>
-                  </div>
-                </form>
-              </div>
-              <div class="block search-container">
-                <div class="searchbar-hide-on-search">
-                  <h2>Popular Categories</h2>
-                  <ul class="popular-tags">
-                    <li><a href="#" class="link"><span>Politics</span><i class="icon ion-ios-arrow-forward"></i></a></li>
-                    <li><a href="#" class="link"><span>Sports</span><i class="icon ion-ios-arrow-forward"></i></a></li>
-                    <li><a href="#" class="link"><span>Fashion</span><i class="icon ion-ios-arrow-forward"></i></a></li>
-                    <li><a href="#" class="link"><span>Animals</span><i class="icon ion-ios-arrow-forward"></i></a></li>
-                    <li><a href="#" class="link"><span>Travel</span><i class="icon ion-ios-arrow-forward"></i></a></li>
-                    <li><a href="#" class="link"><span>Movies</span><i class="icon ion-ios-arrow-forward"></i></a></li>
-                  </ul>
-                  <h2>Popular Tags</h2>
-                  <div class="list no-hairlines trending-search">
-                    <ul>
-                      <li class="item-content">
-                        <div class="item-inner">
-                          <div class="item-title"><a href="#" class="link">Ronaldo</a></div>
-                        </div>
-                      </li>
-                      <li class="item-content">
-                        <div class="item-inner">
-                          <div class="item-title"><a href="#" class="link">Lil Wayne</a></div>
-                        </div>
-                      </li>
-                      <li class="item-content">
-                        <div class="item-inner">
-                          <div class="item-title"><a href="#" class="link">Football</a></div>
-                        </div>
-                      </li>
-                      <li class="item-content">
-                        <div class="item-inner">
-                          <div class="item-title"><a href="#" class="link">Lebron James</a></div>
-                        </div>
-                      </li>
-                      <li class="item-content">
-                        <div class="item-inner">
-                          <div class="item-title"><a href="#" class="link">NBA</a></div>
-                        </div>
-                      </li>
-                      <li class="item-content">
-                        <div class="item-inner">
-                          <div class="item-title"><a href="#" class="link">US Elections</a></div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="preloader search-preloader"></div>
-                <div class="search-results">
-                  <ul class="list media-list post-list">
-                    <li>
-                      <a href="/single/">
-                        <div class="item-content">
-                          <div class="item-media"><img src="img/thumb-11.jpg" alt=""></div>
-                          <div class="item-inner">
-                            <div class="item-subtitle">Fashion</div>
-                            <div class="item-title">The 6th Edition of the Body Painting Contest</div>
-                            <div class="item-subtitle bottom-subtitle"><img src="img/authors/author-7.jpg" alt="">Elena Anka</div>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/single/">
-                        <div class="item-content">
-                          <div class="item-media"><img src="img/thumb-12.jpg" alt=""></div>
-                          <div class="item-inner">
-                            <div class="item-subtitle">Photography</div>
-                            <div class="item-title">20 Photography Tips for Taking Pictures</div>
-                            <div class="item-subtitle bottom-subtitle"><img src="img/authors/author-3.jpg" alt="">Jess Roxana</div>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/single/">
-                        <div class="item-content">
-                          <div class="item-media"><img src="img/thumb-13.jpg" alt=""></div>
-                          <div class="item-inner">
-                            <div class="item-subtitle">Beatles</div>
-                            <div class="item-title">Tottenham: NFL Turf Is in Place!</div>
-                            <div class="item-subtitle bottom-subtitle"><img src="img/authors/author-1.jpg" alt="">Camille Aline</div>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/single/">
-                        <div class="item-content">
-                          <div class="item-media"><img src="img/thumb-31.jpg" alt=""></div>
-                          <div class="item-inner">
-                            <div class="item-subtitle">Fashion</div>
-                            <div class="item-title">The Crocodile, Man's Best Friend?</div>
-                            <div class="item-subtitle bottom-subtitle"><img src="img/authors/author-7.jpg" alt="">Elena Anka</div>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/single/">
-                        <div class="item-content">
-                          <div class="item-media"><img src="img/thumb-32.jpg" alt=""></div>
-                          <div class="item-inner">
-                            <div class="item-subtitle">Science</div>
-                            <div class="item-title">7 Accessories to Pack This Summer</div>
-                            <div class="item-subtitle bottom-subtitle"><img src="img/authors/author-3.jpg" alt="">Jess Roxana</div>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pages View -->
-        <div id="view-pages" class="view tab">
-          <div data-name="pages" class="page">
-            <div class="navbar">
-              <div class="navbar-inner sliding">
-                <div class="title">Components</div>
-              </div>
-            </div>
-            <!-- Scrollable page content -->
-            <div class="page-content">
-              <div class="block">
-                <h2>Dark Mode</h2>
-              </div>
-              <div class="list pages-list">
-                <ul>
-                  <li>
-                    <div class="item-link item-content item-button">
-                      <div class="item-media bg-color-black"><i class="icon ion-ios-moon text-color-orange"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Enable Dark Mode</div>
-                        <label class="toggle toggle-init color-green toggle-theme">
-                          <input type="checkbox">
-                          <span class="toggle-icon"></span>
-                        </label>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="block">
-                <h2>Color Themes</h2>
-              </div>
-              <div class="list pages-list">
-                <ul>
-                  <li>
-                    <div class="item-content item-themes">
-                      <label class="radio color-white"><input type="radio" name="radio-color-theme" id="color-theme-red"><i class="icon-radio bg-color-red"></i></label>
-                      <label class="radio color-white"><input type="radio" name="radio-color-theme" id="color-theme-green"><i class="icon-radio bg-color-green"></i></label>
-                      <label class="radio color-white"><input type="radio" name="radio-color-theme" id="color-theme-blue"><i class="icon-radio bg-color-blue"></i></label>
-                      <label class="radio color-white"><input type="radio" name="radio-color-theme" id="color-theme-pink" checked><i class="icon-radio bg-color-pink"></i></label>
-                      <label class="radio color-white"><input type="radio" name="radio-color-theme" id="color-theme-yellow"><i class="icon-radio bg-color-yellow"></i></label>
-                      <label class="radio color-white"><input type="radio" name="radio-color-theme" id="color-theme-orange"><i class="icon-radio bg-color-orange"></i></label>
-                      <label class="radio color-white"><input type="radio" name="radio-color-theme" id="color-theme-gray"><i class="icon-radio bg-color-gray"></i></label>
-                      <label class="radio color-black"><input type="radio" name="radio-color-theme" id="color-theme-white"><i class="icon-radio bg-color-white"></i></label>
-                      <label class="radio color-white"><input type="radio" name="radio-color-theme" id="color-theme-black"><i class="icon-radio bg-color-black"></i></label>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="block">
-                <h2>Big Cards</h2>
-              </div>
-              <div class="list pages-list">
-                <ul>
-                  <li>
-                    <a href="/cards/" class="item-link item-content">
-                      <div class="item-media"><i class="icon ion-md-image"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Cards</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/cards-author-comments/" class="item-link item-content">
-                      <div class="item-media"><i class="icon ion-md-image"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Cards (author + comments)</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/cards-category/" class="item-link item-content">
-                      <div class="item-media"><i class="icon ion-md-image"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Cards (with category)</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/cards-chip/" class="item-link item-content">
-                      <div class="item-media"><i class="icon ion-md-image"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Cards (with chip)</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/cards-medium/" class="item-link item-content">
-                      <div class="item-media"><i class="icon ion-md-image"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Cards (medium size)</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/cards-footer/" class="item-link item-content">
-                      <div class="item-media bg-color-yellow"><i class="icon ion-ios-image"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Cards (footer version)</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/cards-columns/" class="item-link item-content">
-                      <div class="item-media bg-color-orange"><i class="icon ion-md-images"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Cards (2 columns)</div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="block">
-                <h2>Lists</h2>
-              </div>
-              <div class="list pages-list">
-                <ul>
-                  <li>
-                    <a href="/list-category/" class="item-link item-content">
-                      <div class="item-media bg-color-green"><i class="icon ion-ios-list-box"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">List (with category)</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/list-category-author/" class="item-link item-content">
-                      <div class="item-media bg-color-green"><i class="icon ion-ios-list-box"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">List (category + author)</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/list-category-date/" class="item-link item-content">
-                      <div class="item-media bg-color-green"><i class="icon ion-ios-list-box"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">List (category + date)</div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="block">
-                <h2>Sliders</h2>
-              </div>
-              <div class="list pages-list">
-                <ul>
-                  <li>
-                    <a href="/slider-1/" class="item-link item-content">
-                      <div class="item-media bg-color-blue"><i class="icon ion-ios-photos"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Slider 1</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/slider-2/" class="item-link item-content">
-                      <div class="item-media bg-color-blue"><i class="icon ion-ios-photos"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Slider 2</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/slider-3/" class="item-link item-content">
-                      <div class="item-media bg-color-blue"><i class="icon ion-ios-photos"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Slider 3</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/slider-4/" class="item-link item-content">
-                      <div class="item-media bg-color-blue"><i class="icon ion-ios-photos"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Slider 4</div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="block">
-                <h2>Single Post</h2>
-              </div>
-              <div class="list pages-list">
-                <ul>
-                  <li>
-                    <a href="/single/" class="item-link item-content">
-                      <div class="item-media"><i class="icon ion-ios-paper"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Single (header 1)</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/single-2/" class="item-link item-content">
-                      <div class="item-media"><i class="icon ion-ios-paper"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Single (header 2)</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/single-elements/" class="item-link item-content">
-                      <div class="item-media"><i class="icon ion-ios-paper"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Single Elements</div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="block">
-                <h2>Categories</h2>
-              </div>
-              <div class="list pages-list">
-                <ul>
-                  <li>
-                    <a href="/categories-cards/" class="item-link item-content">
-                      <div class="item-media bg-color-orange"><i class="icon ion-ios-apps"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Categories (cards)</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/categories-columns/" class="item-link item-content">
-                      <div class="item-media bg-color-orange"><i class="icon ion-ios-apps"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Categories (columns)</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/category/" class="item-link item-content">
-                      <div class="item-media bg-color-orange"><i class="icon ion-ios-apps"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Category Posts</div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="block">
-                <h2>Author</h2>
-              </div>
-              <div class="list pages-list">
-                <ul>
-                  <li>
-                    <a href="/author-list/" class="item-link item-content">
-                      <div class="item-media bg-color-yellow"><i class="icon ion-ios-list"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Author List</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/author/" class="item-link item-content">
-                      <div class="item-media bg-color-yellow"><i class="icon ion-ios-person"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Author Profile</div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="block">
-                <h2>Contact</h2>
-              </div>
-              <div class="list pages-list">
-                <ul>
-                  <li>
-                    <a href="/contact/" class="item-link item-content">
-                      <div class="item-media"><i class="icon ion-ios-mail"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Contact Page</div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="block">
-                <h2>Features</h2>
-              </div>
-              <div class="list pages-list">
-                <ul>
-                  <li>
-                    <a href="/pull-to-refresh/" class="item-link item-content">
-                      <div class="item-media"><i class="icon ion-ios-arrow-round-down"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Pull to Refresh</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/infinite-scroll/" class="item-link item-content">
-                      <div class="item-media"><i class="icon ion-ios-infinite"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Infinite Scroll</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/promo-banner/" class="item-link item-content">
-                      <div class="item-media bg-color-blue"><i class="icon ion-ios-star"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Promo Banner</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <div class="item-link item-content item-button">
-                      <div class="item-media bg-color-orange"><i class="icon ion-ios-share-alt"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Share Dialog</div>
-                        <a href="#" class="col button button-small button-round button-fill share-actions">Try It</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="item-link item-content item-button">
-                      <div class="item-media bg-color-green"><i class="icon ion-ios-notifications"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title">Notification</div>
-                        <a href="#" class="col button button-small button-round button-fill open-notification">Try It</a>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Toolbar -->
-        <div class="toolbar tabbar tabbar-labels">
-          <div class="toolbar-inner">
-            <a href="#view-today" class="tab-link tab-link-active">
-              <i class="icon ion-ios-today"></i>
-              <span class="tabbar-label">Aujourd'hui</span>
-            </a>
-            <a href="#view-programme" class="tab-link">
-              <i class="icon ion-ios-apps"></i>
-              <span class="tabbar-label">Programme</span>
-            </a>
-            <a href="#view-discover" class="tab-link">
-              <i class="icon ion-ios-star"></i>
-              <span class="tabbar-label">Classement</span>
-            </a>
-            <a href="#view-search" class="tab-link">
-              <i class="icon ion-ios-search"></i>
-              <span class="tabbar-label">Connexion</span>
-            </a>
-            <a href="#view-pages" class="tab-link">
-              <i class="icon ion-ios-albums"></i>
-              <span class="tabbar-label">Pages</span>
-            </a>
-
-          </div>
-        </div>
-
-      </div>
+        <div class="header-line-2 header-scroll-effect">
+            <a href="#" class="header-pretitle header-date color-highlight"><!--Date will Appear Here --></a>
+            <a href="#" class="header-title">Welcome</a>
+            <a href="#" data-menu="menu-list" class="header-icon header-icon-1"><i class="fa fa-bars"></i></a>
+            <a href="#" data-menu="menu-find" class="header-icon header-icon-2"><i class="fa fa-search"></i></a>
+            <a href="#" data-menu="menu-demo" class="header-icon header-icon-3"><i class="fa fa-cog"></i></a>
+        </div>  
     </div>
-    <script src="js/framework7.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/kggs.js"></script>
-  </body>
+    
+	<div class="page-content header-clear-large">
+        
+        <div class="slider-margins">
+            <div class="single-slider owl-carousel owl-no-dots">
+                <div class="item shadow-small">
+                    <div class="caption-style-4">
+                        <strong>ENABLED - ELITE AUTHOR</strong>
+                        <h1>Created by The Leading Mobile Author on Envato</h1>
+                        <p>
+                            Made to look beautiful, be highlighy flexible and friedly for all users to edit.
+                        </p>
+                    </div>
+                    <div class="overlay bg-black opacity-50"></div>
+                    <img src="images/pictures/14t.jpg" alt="img">
+                </div>        
+                <div class="item shadow-small">
+                    <div class="above-overlay above-overlay-bottom">
+                        <div class="caption-style-1 above-overlay">
+                        <h1 class="bold color-white">The Best Mobile Templates on the Marketplaces</h1>
+                            <div class="image-details bottom-30">
+                                <a href="#"><img src="images/empty.png" class="preload-image" data-src="images/preload-logo-small.png" alt="img">Enabled</a>
+                                <a href="#"><i class="fa fa-heart"></i>15k</a>
+                                <a href="#"><i class="fa fa-comment"></i>536</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay overlay-gradient-large"></div>
+                    <img src="images/pictures/22t.jpg" alt="img">
+                </div> 
+                <div class="item shadow-small">
+                    <div class="caption-style-3">
+                        <h1>SIMPLE<br>AND<br>FLEXIBLE</h1>
+                        <a href="#" class="button button-round button-xs bg-highlight uppercase ultrabold">MORE</a>
+                        <p class="bg-white">
+                            Apptastic is made to be highlighy flexible and edit friedly for all users.
+                        </p>
+                    </div>
+                    <div class="overlay bg-black opacity-50"></div>
+                    <img src="images/pictures/20t.jpg" alt="img">
+                </div>   
+                <div class="item shadow-small">
+                    <div class="caption-style-2">
+                        <strong>Multiple Styles</strong>
+                        <span>Choose your Style. We have plenty!</span>
+                        <div class="image-details">
+                            <a href="#"><img src="images/empty.png" class="preload-image" data-src="images/preload-logo-small.png" alt="img">Enabled</a>
+                            <a href="#"><i class="color-red-light fa fa-heart"></i>15k</a>
+                            <a href="#"><i class="fa fa-comment"></i>536</a>
+                        </div>
+                    </div>
+                    <div class="overlay overlay-gradient-large"></div>
+                    <img src="images/pictures/3t.jpg" alt="img">
+                </div>  
+            </div>
+        </div>   
+
+        <div class="simple-slider owl-carousel owl-no-dots top-30">
+            <div class="content call-to-action-1">
+                <h1 class="center-text font-30">Apptastic</h1>
+                <p class="center-text">
+                    Certainly the most powerful, simple to use, and absolutely gorgeous mobile template on the Envato Marketplaces.
+                </p>
+                <a href="homepages.html" class="shadow-small button button-s button-center-large button-rounded bg-highlight uppercase ultrabold">VIEW MORE HOMEPAGE STYLES</a>
+            </div>         
+
+            <div class="content call-to-action-2">
+                <h1 class="center-text font-24">It's Nice to Meet You!</h1>
+                <p class="center-text">
+                    Certainly the most powerful, simple to use, and absolutely gorgeous mobile template on the Envato Marketplaces.
+                </p>
+                <div class="one-half">
+                    <a href="#" class="shadow-small button button-s button-full button-rounded bg-highlight uppercase ultrabold">Call Now</a>
+                </div>
+                <div class="one-half last-column">
+                    <a href="#" class="shadow-small button button-s button-full button-rounded button-green uppercase ultrabold">Take a TOUR</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="content call-to-action-3">
+                <h1 class="center-text font-24">Sharing is Caring</h1>
+                <p class="center-text bottom-30">
+                    Certainly the most powerful, simple to use, and absolutely gorgeous mobile template on the Envato Marketplaces.
+                </p>
+                <div class="call-to-action-socials">
+                    <a href="#" class="shadow-small bg-facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="shadow-small bg-google"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="shadow-small bg-twitter"><i class="fab fa-twitter"></i></a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <span class="center-text font-10 bottom-20 color-night-light">Swipe me to the left. Multiple Call To Actions are Available</span>
+
+        <div class="decoration decoration-margins"></div>
+
+        <div class="content content-round shadow-medium">
+            <div class="caption-style-4">
+                <strong>Only the Best</strong>
+                <h1>Packed with <br> First Class Features</h1>
+            </div>
+            <div class="overlay bg-black opacity-70"></div>
+            <img src="images/pictures/8w.jpg" class="responsive-image bottom-0" alt="img">
+        </div>            
+
+        <div class="content">
+            <div class="decoration"></div>
+            <div class="icon-column">
+                <i class="fa fa-power-off font-26 gradient-sky-dark color-white shadow-large"></i>
+                <h1>Quality Obsessed</h1>
+                <p>
+                    When we build a product, we code and test every feature, so you get the best.
+                </p>
+            </div>                
+            <div class="icon-column">
+                <i class="fa fa-star font-24 gradient-red-dark color-white shadow-large"></i>
+                <h1>Focused on You</h1>
+                <p>
+                    We develop all the code so you just have to edit, we do the heavy lifting for you.
+                </p>
+            </div>   
+            <div class="icon-column">
+                <i class="fa fa-life-ring font-28 gradient-green-dark color-white shadow-large"></i>
+                <h1>Top Notch Support</h1>
+                <p>
+                    Our customers praise our support and help files, built with no detail left behind.
+                </p>
+            </div>
+            <div class="decoration"></div>
+        </div>
+
+        <div class="content-title bottom-30">
+            <span class="color-highlight">Our customers come first</span>
+            <h1>Undisputed Care</h1>
+            <a href="#" class="color-highlight">See All</a>
+        </div>
+
+        <div class="slider-margins bottom-30">
+            <div class="double-slider owl-carousel owl-no-dots">
+                <div class="item bottom-10 shadow-small">
+                    <div class="above-overlay above-overlay-top">
+                        <strong class="color-white uppercase ultrabold font-11 right-text">Quality</strong>
+                    </div>       
+                    <div class="above-overlay above-overlay-bottom bottom-10">
+                        <h5 class="color-white">All Features Tested and Checked.</h5>
+                    </div>
+                    <div class="overlay overlay-gradient"></div>
+                    <a href="#"><img src="images/pictures/29t.jpg" alt="img" class="responsive-image"></a>
+                </div>       
+                <div class="item bottom-10 shadow-small">
+                    <div class="above-overlay above-overlay-top">
+                        <strong class="color-white uppercase ultrabold font-11 right-text">Speed</strong>
+                    </div>       
+                    <div class="above-overlay above-overlay-bottom bottom-10">
+                        <h5 class="color-white">Our Products are fast! Blazing Fast.</h5>
+                    </div>
+                    <div class="overlay overlay-gradient"></div>
+                    <a href="#"><img src="images/pictures/13t.jpg" alt="img" class="responsive-image"></a>
+                </div>   
+                <div class="item bottom-10 shadow-small">
+                    <div class="above-overlay above-overlay-top">
+                        <strong class="color-white uppercase ultrabold font-11 right-text">Eye Candy</strong>
+                    </div>       
+                    <div class="above-overlay above-overlay-bottom bottom-10">
+                        <h5 class="color-white">Made to Look and Feel Stunning.</h5>
+                    </div>
+                    <div class="overlay overlay-gradient"></div>
+                    <a href="#"><img src="images/pictures/29t.jpg" alt="img" class="responsive-image"></a>
+                </div>                   
+                <div class="item bottom-10 shadow-small">
+                    <div class="above-overlay above-overlay-top">
+                        <strong class="color-white uppercase ultrabold font-11 right-text">Support</strong>
+                    </div>       
+                    <div class="above-overlay above-overlay-bottom bottom-10">
+                        <h5 class="color-white">We're Always Here for our Customers.</h5>
+                    </div>
+                    <div class="overlay overlay-gradient"></div>
+                    <a href="#"><img src="images/pictures/8t.jpg" alt="img" class="responsive-image"></a>
+                </div>                    
+                <div class="item bottom-10 shadow-small">
+                    <div class="above-overlay above-overlay-top">
+                        <strong class="color-white uppercase ultrabold font-11 right-text">Clean Code</strong>
+                    </div>       
+                    <div class="above-overlay above-overlay-bottom bottom-10">
+                        <h5 class="color-white">Oraganized for very easy use.</h5>
+                    </div>
+                    <div class="overlay overlay-gradient"></div>
+                    <a href="#"><img src="images/pictures/4t.jpg" alt="img" class="responsive-image"></a>
+                </div> 
+            </div>
+        </div>
+
+        <div class="decoration decoration-margins"></div>
+
+        <div class="content-title bottom-20">
+            <span class="color-highlight">Loved by Thousands</span>
+            <h1>Top Products</h1>
+            <a href="#" class="color-highlight">See All</a>
+        </div>
+
+        <div class="content">
+            <ul class="link-list">
+                <li><a href="#"><i class="fa fa-star color-yellow-dark"></i><span>Ultra Mobile</span><i class="fa fa-angle-right"></i></a></li>
+                <li><a href="#"><i class="fa fa-heart color-red-dark"></i><span>Kolor Mobile</span><i class="fa fa-angle-right"></i></a></li>
+                <li><a href="#"><i class="fa fa-cog color-blue-dark"></i><span>Vinga Mobile</span><i class="fa fa-angle-right"></i></a></li>
+                <li><a href="#" class="no-border"><i class="fas fa-wine-glass color-pink-dark"></i><span>Appeca Mobile</span><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="decoration decoration-margins"></div>
+
+        <div class="content-title bottom-20">
+            <span class="color-highlight">Only the Best</span>
+            <h1>Featured Products</h1>
+            <a href="#" class="color-highlight">See All</a>
+        </div>
+
+        <div class="slider-margins">
+            <div class="double-slider owl-carousel bottom-10 owl-no-dots">
+                <div class="item">
+                    <div>
+                        <div class="above-overlay above-overlay-bottom">
+                            <div class="image-details bottom-20">
+                                <a href="#"><img src="images/preload-logo-small.png" alt="img"></a>
+                                <a href="#"><i class="fa fa-heart color-red-dark"></i>15k</a>
+                            </div>
+                        </div>
+                        <div class="overlay overlay-gradient"></div>
+                        <a href="#"><img src="images/pictures/10l.jpg" alt="img" class="responsive-image"></a>
+                    </div>
+                    <h4 class="bolder">UltraMobile</h4>
+                    <p>
+                        Our best products ever built. It's a monster.
+                    </p>
+                </div>             
+                <div class="item">
+                    <div>
+                        <div class="above-overlay above-overlay-bottom">
+                            <div class="image-details bottom-20">
+                                <a href="#"><img src="images/preload-logo-small.png" alt="img"></a>
+                                <a href="#"><i class="fa fa-star color-yellow-dark"></i>15k</a>
+                            </div>
+                        </div>
+                        <div class="overlay overlay-gradient"></div>
+                        <a href="#"><img src="images/pictures/9l.jpg" alt="img" class="responsive-image"></a>
+                    </div>
+                    <h4 class="bolder">KolorMobile</h4>
+                    <p>
+                        A gorgeous interface with powerful features.
+                    </p>
+                </div>         
+                <div class="item">
+                    <div>
+                        <div class="above-overlay above-overlay-bottom">
+                            <div class="image-details bottom-20">
+                                <a href="#"><img src="images/preload-logo-small.png" alt="img"></a>
+                                <a href="#"><i class="fa fa-star color-yellow-dark"></i>15k</a>
+                            </div>
+                        </div>
+                        <div class="overlay overlay-gradient"></div>
+                        <a href="#"><img src="images/pictures/18l.jpg" alt="img" class="responsive-image"></a>
+                    </div>
+                    <h4 class="bolder">Appeca</h4>
+                    <p>
+                        Flexible with light and dark gorgeous skins.
+                    </p>
+                </div>      
+                <div class="item">
+                    <div>
+                        <div class="above-overlay above-overlay-bottom">
+                            <div class="image-details bottom-20">
+                                <a href="#"><img src="images/preload-logo-small.png" alt="img"></a>
+                                <a href="#"><i class="fa fa-star color-yellow-dark"></i>15k</a>
+                            </div>
+                        </div>
+                        <div class="overlay overlay-gradient"></div>
+                        <a href="#"><img src="images/pictures/14l.jpg" alt="img" class="responsive-image"></a>
+                    </div>
+                    <h4 class="bolder">AMP Pro</h4>
+                    <p>
+                        Powerful with the latest tech of speed.
+                    </p>
+                </div>       
+            </div>
+        </div>
+
+        <div class="decoration decoration-margins"></div>
+
+        <div class="content-title bottom-20">
+            <span class="color-highlight">Only The Best</span>
+            <h1 class="font-22">Apptastic is The Best</h1>
+            <a href="#" class="color-highlight">See All</a>
+        </div>
+        
+        <div class="slider-margins bottom-30">
+            <div class="double-slider owl-carousel owl-no-dots">   
+                <div class="item bottom-10 shadow-small">
+                    <div class="above-overlay above-overlay-top">
+                        <strong class="color-white uppercase ultrabold"><i class="fa fa-heartbeat top-20 fa-3x"></i></strong>
+                    </div>       
+                    <div class="above-overlay above-overlay-bottom bottom-10">
+                        <h1 class="color-white bolder">Quality</h1>
+                        <h5 class="color-white font-11">All Features Tested and Checked.</h5>
+                    </div>
+                    <div class="overlay bg-red-light"></div>
+                    <a href="#"><img src="images/pictures/0t.jpg" alt="img" class="responsive-image"></a>
+                </div>          
+                <div class="item bottom-10 shadow-small">
+                    <div class="above-overlay above-overlay-top">
+                        <strong class="color-white uppercase ultrabold"><i class="fa fa-user-friends top-20 fa-3x"></i></strong>
+                    </div>       
+                    <div class="above-overlay above-overlay-bottom bottom-10">
+                        <h1 class="color-white bolder">Friendly</h1>
+                        <h5 class="color-white font-11">Easy to use and edit by Everyone.</h5>
+                    </div>
+                    <div class="overlay bg-green-dark"></div>
+                    <a href="#"><img src="images/pictures/0t.jpg" alt="img" class="responsive-image"></a>
+                </div>              
+                <div class="item bottom-10 shadow-small">
+                    <div class="above-overlay above-overlay-top">
+                        <strong class="color-white uppercase ultrabold"><i class="fa fa-certificate top-20 fa-3x"></i></strong>
+                    </div>       
+                    <div class="above-overlay above-overlay-bottom bottom-10">
+                        <h1 class="color-white bolder">Certified</h1>
+                        <h5 class="color-white font-11">Built by the Best Mobile Authors on Envato.</h5>
+                    </div>
+                    <div class="overlay bg-blue-dark"></div>
+                    <a href="#"><img src="images/pictures/0t.jpg" alt="img" class="responsive-image"></a>
+                </div>  
+                <div class="item bottom-10 shadow-small">
+                    <div class="above-overlay above-overlay-top">
+                        <strong class="color-white uppercase ultrabold"><i class="fa fa-rocket top-20 fa-3x"></i></strong>
+                    </div>       
+                    <div class="above-overlay above-overlay-bottom bottom-10">
+                        <h1 class="color-white bolder">Fast</h1>
+                        <h5 class="color-white font-11">Checked and Optimized for Best Performance.</h5>
+                    </div>
+                    <div class="overlay bg-teal-dark"></div>
+                    <a href="#"><img src="images/pictures/0t.jpg" alt="img" class="responsive-image"></a>
+                </div> 
+            </div>
+        </div>
+        
+        <div class="decoration decoration-margins"></div>
+        
+        <div class="content-title bottom-20">
+            <span class="color-highlight">25k Customers</span>
+            <h1>Testimonials</h1>
+            <a href="#" class="color-highlight">See All</a>
+        </div>
+        
+        <div class="quote-slider owl-carousel owl-no-dots">
+            <div class="blockquote-2">
+                <img class="shadow-large" src="images/pictures/faces/1small.png">
+                <p class="color-night-light">
+                    The code is always great with any Enabled template, but its the customer
+                    support that wins me over all the time.
+                </p>
+            </div>
+            <div class="blockquote-2">
+                <img class="shadow-large" src="images/pictures/faces/2small.png">
+                <p class="color-night-light">
+                    The code is always great with any Enabled template, but its the customer
+                    support that wins me over all the time.
+                </p>
+            </div>            
+        </div>
+
+        <div class="decoration decoration-margins"></div>   
+
+        <div class="content content-round shadow-medium">
+            <a href="#" class="vertical-center-button button-right bg-highlight uppercase button-xxs ultrabold button-round">GET IT</a>
+            <div class="caption-style-4">
+                <strong>It's time to upgrade</strong>
+                <h1>Get Apptastic <br> From Envato Today</h1>
+            </div>
+            <div class="overlay bg-black opacity-70"></div>
+            <img src="images/pictures/29w.jpg" class="responsive-image bottom-0" alt="img">
+        </div>            
+
+        <div class="footer">
+            <a href="#" class="footer-logo"></a>
+            <p class="footer-text">There's nothing that comes close to Apptastic<br> It's the best Mobile Template on Envato</p>
+            <div class="footer-socials">
+                <a href="#" class="scale-hover icon icon-round no-border icon-xs bg-facebook border-teal-3d"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="scale-hover icon icon-round no-border icon-xs bg-twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="scale-hover icon icon-round no-border icon-xs bg-google"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="scale-hover icon icon-round no-border icon-xs bg-phone"><i class="fa fa-phone"></i></a>
+                <a href="#" data-menu="menu-share" class="scale-hover icon icon-round no-border icon-xs bg-teal-dark"><i class="fa fa-retweet font-15"></i></a>
+                <a href="#" class="scale-hover icon icon-round no-border icon-xs back-to-top bg-blue-dark"><i class="fa fa-angle-up font-16"></i></a>
+            </div>
+            <p class="footer-copyright">Copyright &copy; Enabled <span id="copyright-year">2017</span>. All Rights Reserved.</p>
+        </div>
+    </div>
+    <a href="#" class="back-to-top-badge back-to-top-small bg-highlight"><i class="fa fa-angle-up"></i>Back to Top</a>
+    <div id="menu-share" data-height="420" class="menu-box menu-bottom">
+        <div class="menu-title">
+            <span class="color-highlight">Just tap to share</span>
+            <h1>Sharing is Caring</h1>
+            <a href="#" class="menu-hide"><i class="fa fa-times"></i></a>
+        </div>
+        <div class="sheet-share-list">
+            <a href="#" class="shareToFacebook"><i class="fab fa-facebook-f bg-facebook"></i><span>Facebook</span><i class="fa fa-angle-right"></i></a>
+            <a href="#" class="shareToTwitter"><i class="fab fa-twitter bg-twitter"></i><span>Twitter</span><i class="fa fa-angle-right"></i></a>
+            <a href="#" class="shareToLinkedIn"><i class="fab fa-linkedin-in bg-linkedin"></i><span>LinkedIn</span><i class="fa fa-angle-right"></i></a>
+            <a href="#" class="shareToGooglePlus"><i class="fab fa-google-plus-g bg-google"></i><span>Google +</span><i class="fa fa-angle-right"></i></a>
+            <a href="#" class="shareToPinterest"><i class="fab fa-pinterest-p bg-pinterest"></i><span>Pinterest</span><i class="fa fa-angle-right"></i></a>
+            <a href="#" class="shareToWhatsApp"><i class="fab fa-whatsapp bg-whatsapp"></i><span>WhatsApp</span><i class="fa fa-angle-right"></i></a>
+            <a href="#" class="shareToMail no-border bottom-5"><i class="fas fa-envelope bg-mail"></i><span>Email</span><i class="fa fa-angle-right"></i></a>
+        </div>
+    </div>
+</div>      
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/plugins.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>
 </html>
