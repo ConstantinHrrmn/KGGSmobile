@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.constantin.kggs"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.constantin.kggs"
     }
   },
   "dependent_plugins": {}
