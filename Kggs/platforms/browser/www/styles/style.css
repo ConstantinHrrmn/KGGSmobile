@@ -16,11 +16,11 @@
     height:100px;
 }
 
-.preloader-light h1{background-image:url(../images/logo-dark.png)!important;}
-.preloader-dark h1{background-image:url(../images/logo-light.png)!important;}
+.preloader-light h1{background-image:url(../images/kids-geneve.png)!important;}
+.preloader-dark h1{background-image:url(../images/kids-geneve.png)!important;}
 
 .dark-skin .header-logo-image,
-.dark-skin .footer-logo{background-image:url(../images/logo-light.png)!important;}
+.dark-skin .footer-logo{background-image:url(../images/kids-geneve.png)!important;}
 
 .light-skin .header-logo-image,
-.light-skin .footer-logo{background-image:url(../images/logo-dark.png)!important;}
+.light-skin .footer-logo{background-image:url(../images/kids-geneve.png)!important;}
