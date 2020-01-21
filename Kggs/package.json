@@ -14,7 +14,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "cordova-browser": "^6.0.0",
-    "cordova-ios": "^5.0.1",
+    "cordova-ios": "^5.1.1",
     "cordova-plugin-network-information": "^2.0.2"
   },
   "devDependencies": {
