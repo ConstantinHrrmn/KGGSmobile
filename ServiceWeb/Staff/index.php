@@ -2,6 +2,10 @@
 
 include "../pdo.php";
 include "../Token/validate.php";
+include "../Token/generate.php";
+include "./Login/index.php";
+include "./Get/index.php";
+include "./Update/index.php";
 
 function GetById($id){
     $req = "SELECT `id`,`nom`,`prenom`,`age`,`idRole`,`phone`, `token` as 'access' FROM `Staff` WHERE `id` = :id LIMIT 1";
@@ -31,4 +35,15 @@ if(isset($_GET['token'])){
     if (isset($_GET['id'])) {
         echo json_encode(GetByIdNoToken($_GET['id']));
     } 
+    if (isset($_GET['nom']) && isset($_GET['prenom']) && isset($_GET['login'])){
+        if(count(Login($_GET['nom'], $_GET['prenom'])) == 1){
+            $token = NewToken();
+            $user = GetByNomPrenom($_GET['nom'], $_GET['prenom']);
+            UpdateToken($token, $user['id']);
+            echo json_encode(GetById($user['id']));
+        }
+        else{
+            echo "identifiants éronnés";
+        }
+    }
 }
