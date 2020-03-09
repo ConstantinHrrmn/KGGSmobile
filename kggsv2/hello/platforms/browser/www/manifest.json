@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "HelloWorld",
+  "short_name": "HelloWorld",
+  "version": "com.example.hello",
+  "description": "Angular + Onsen UI + Cordova sample app",
+  "author": "Apache Cordova Team",
+  "icons": [],
+  "start_url": "index.html"
+}

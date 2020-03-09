@@ -1,0 +1,11 @@
+{
+    "name": "helloworld",
+    "version": "1.0.0",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "cordova-browser": "^6.0.0",
+        "cordova-template-ngx-onsenui": "^0.4.1"
+    }
+}
