@@ -1,0 +1,2 @@
+.side-crop { max-height: 30%; overflow: hidden; }
+.side-crop img { max-width: initial; /* Maybe optional. See note below */ }

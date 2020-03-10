@@ -1,0 +1,48 @@
+<div class="page page-comparator">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link icon-only panel-open" data-panel="left">
+                    <i class="icon f7-icons ios-only">menu</i>
+                    <i class="icon material-icons md-only">menu</i>
+                </a>
+            </div>
+            <div class="title sliding">Comparator</div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="list no-hairlines-md">
+            <figure class="highcharts-figure">
+                <div id="container-comparator"></div>
+            </figure>
+            <div class="block">
+                <p class="segmented segmented-raised segmented-round">
+                    <button id="btn-graph-spider-web" class="button button-round button-active">Spider web</button>
+                    <button id="btn-graph-column-chart" class="button button-round">Column chart</button>
+                </p>
+            </div>
+        </div>
+        <div class="card data-table data-table-collapsible data-table-init">
+            <table id="table-comparator">
+                <thead id="table-comparator-header">
+                <tr>
+                    <th>Character</th>
+                    <th>Class</th>
+                </tr>
+                </thead>
+                <tbody id="table-comparator-content">
+                </tbody>
+            </table>
+            <button id="btn-compare" class="button button-fill">Select characters to compare</button>
+            <a class="item-link smart-select smart-select-init" data-open-in="popup"  data-searchbar="true" data-searchbar-placeholder="Search a character...">
+                <select id="select-compare" multiple maxlength="8">
+                </select>
+                <div class="item-content" hidden>
+                    <div class="item-inner">
+                        <div class="item-title">Select characters (8 max)</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

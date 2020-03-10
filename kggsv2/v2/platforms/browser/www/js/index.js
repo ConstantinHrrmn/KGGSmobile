@@ -29,6 +29,11 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
         document.getElementById("cordovaDevice").addEventListener("click", checkConnection);
+        document.addEventListener("online", onOnline, false);
+        document.addEventListener("offline", onOffline, false);
+        getJSONP('http://myviewvision.ch/other/kggsmobile/team/get/?all', function(data){
+            console.log(data);
+        }); 
     },
 
     // Update DOM on a Received Event
@@ -43,6 +48,33 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+function onOnline() {
+    console.log("Connected");
+}
+
+function onOffline() {
+    console.log("Disconnected");
+}
+
+function getJSONP(url, success) {
+
+    var ud = '_' + +new Date,
+        script = document.createElement('script'),
+        head = document.getElementsByTagName('head')[0] 
+               || document.documentElement;
+
+    window[ud] = function(data) {
+        head.removeChild(script);
+        success && success(data);
+    };
+
+    script.src = url.replace('callback=?', 'callback=' + ud);
+    head.appendChild(script);
+
+}
+
+
 
 function checkConnection() {
     var networkState = navigator.connection.type;
