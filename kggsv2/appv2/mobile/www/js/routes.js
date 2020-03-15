@@ -20,25 +20,37 @@ routes = [
         }
     },
     {
-        name: 'stat',
-        path: '/stat/:charId',
-        templateUrl: './pages/stat.html',
+        name: 'match',
+        path: '/match/:id',
+        templateUrl: './pages/match.html',
         on: {
             pageInit: (e, page) => {
-                const charId = page.route.params.charId;
-                if (charId != null) {
-                    const char = feData.characters.find(x => x.id == charId);
-                    let charFullName = (char.lastName) ? char.firstName + " " + char.lastName
-                                                       : char.firstName;
+                const id = page.route.params.id;
+                console.log(id);
 
-                    $$("#title-char").text(charFullName);
-                    $$("#picture-char").attr("src", "img/characters/" + char.firstName + ".png");
-                    actualCharId = charId;
-                    createTableOfStats();
-                    createListOfAvailableClasses();
-                    displayCharGrowthRates();
-                }
-                createEventForGraphSwitch(displayGraphOfGrowthRatesForChar);
+                $.getJSON(URL_TEAMS_FOR_MATCH + id, function(result) {
+                    if(result.length > 0){
+                        result.forEach(team =>{
+                            var card = document.createElement('div');
+                            card.setAttribute('class', 'card');
+                            var content = document.createElement('div');
+                            content.setAttribute('class','card-content card-content-padding');
+                            var teams = document.createTextNode(team['Name'] + " --> " + team['Score']);
+                            content.appendChild(teams);
+                            card.appendChild(content);
+                            document.getElementById("teams").appendChild(card);
+                        })
+                    }else{
+                        var card = document.createElement('div');
+                        card.setAttribute('class', 'card');
+                        var content = document.createElement('div');
+                        content.setAttribute('class','card-content card-content-padding');
+                        var teams = document.createTextNode("AUCUNE EQUIPE POUR CE MATCH");
+                        content.appendChild(teams);
+                        card.appendChild(content);
+                        document.getElementById("teams").appendChild(card);
+                    }
+                });
             }
         }
     },
@@ -50,6 +62,17 @@ routes = [
             pageInit: (e, page) => {
                 const id = page.route.params.id;
                 DisplayAllTeams();
+            }
+        }
+    },
+    {
+        name: 'staff',
+        path: '/staff/',
+        templateUrl: './pages/staff.html',
+        on: {
+            pageInit: (e, page) => {
+                const id = page.route.params.id;
+                DisplayStaff();
             }
         }
     },
@@ -66,21 +89,13 @@ routes = [
     },
 
     {
-        name: 'comparator',
-        path: '/comparator/',
-        templateUrl: './pages/comparator.html',
+        name: 'login',
+        path: '/login/',
+        templateUrl: './pages/login.html',
         on: {
-            pageInit: (e, page) => createEventForGraphSwitch(displayCurrentGraph),
-            // We must use the pageAfterIn event in order to open the smartselect directly
-            pageAfterIn: (e, page) => {
-                configureSmartSelectOfCharacters();
-            },
-            pageBeforeRemove: function (e, page) {
-                // Reset the classes selected when exiting the page
-                feData.characters.forEach(char => {
-                    char.idClassSelected = null;
-                });
-            },
+            pageInit: (e, page) => {
+
+            }
         }
     },
     {

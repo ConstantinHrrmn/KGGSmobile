@@ -9,7 +9,7 @@ function DisplayAllTeams(){
 
         var text1 = document.createTextNode(item.Number);
         var text2 = document.createTextNode(item.Name);
-        var text3 = document.createTextNode(item.Coach);
+        var text3 = document.createTextNode(item.Coach == null ? "-" : item.Coach);
 
         numero.appendChild(text1);
         nom.appendChild(text2);

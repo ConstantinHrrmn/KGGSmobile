@@ -12,7 +12,7 @@ function GetProgram(){
     var lastday = null;
 
     data.forEach(element => {
-        
+
         if(lastday == null || lastday != element['jour']){
             lastday = element['jour'];
             NewDay(lastday);
@@ -48,6 +48,15 @@ function GetProgram(){
 
         var teams = document.createTextNode(teamLabel);
         content.appendChild(teams);
+
+
+        //var url = "/?match="+element['IdMatch'];
+        var link = document.createElement('a');
+        var text = document.createTextNode("Infos");
+        
+        link.setAttribute('href', "/match/"+element['IdMatch']);
+        link.appendChild(text);
+        footer.appendChild(link);
 
         card.appendChild(header);
         card.appendChild(content);
