@@ -4,7 +4,7 @@ routes = [
         templateUrl: './index.html',
         on: {
             pageAfterIn: () => {
-                displayCharacters();
+                //displayCharacters();
                 onDeviceReady();
             }
         }
@@ -60,7 +60,7 @@ routes = [
         on: {
             pageInit: (e, page) => {
                 const id = page.route.params.id;
-                
+                GetProgram();
             }
         }
     },

@@ -1,7 +1,6 @@
 function DisplayAllTeams(){
     var data = kggsTeams;
     data.forEach(item => {
-        console.log(item)
         var tr = document.createElement('tr');
 
         var numero = document.createElement('td');
