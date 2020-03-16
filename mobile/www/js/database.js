@@ -38,32 +38,27 @@ if(user != null){
     IsConnected();
 }
 
-//For debugging on PC
+// For debugging on PC
 //UpdateAll();
 
+/*
 if(isOnline()){
     UpdateAll();
 }else{
-    
     document.addEventListener("online", UpdateAll, false);
-    alert('Aucune connexion internet... Vos mises a jours risquent de ne pas être prises en compte')
-}
+}*/
 
+GetTeams();
+GetProgram();
+GetStaff();
+GetTimes();
+GetDays();
+GetFields();
+GetSports();
 
- function UpdateAll(){
-    GetTeams();
-    GetProgram();
-    GetStaff();
-    GetTimes();
-    GetDays();
-    GetFields();
-    GetSports();
-    
-    setInterval(GetTeams, 1000);
-    setInterval(GetProgram, 1000);
-    setInterval(GetStaff, 1000);
- }
-
+setInterval(GetTeams, 3000);
+setInterval(GetProgram, 3000);
+setInterval(GetStaff, 3000);
 
 function updateData(table ,data) {
     if (data != null && Object.keys(data).length > 0) {

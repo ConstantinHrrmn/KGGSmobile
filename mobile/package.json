@@ -1,8 +1,8 @@
 {
-  "name": "net.dariogenga.fecharts",
-  "displayName": "FE Charts",
+  "name": "net.constantin.kggs",
+  "displayName": "KGGS",
   "version": "1.0.0",
-  "description": "Fire Emblem Charts is a mobile application that allows you to view the statistics of the characters in the game Fire Emblem Three Houses in the form of graphics.",
+  "description": "KGGS est une application destinée au camp des kids games à genève",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -30,8 +30,8 @@
     },
     "platforms": [
       "android",
-      "ios",
-      "browser"
+      "browser",
+      "ios"
     ]
   }
 }
