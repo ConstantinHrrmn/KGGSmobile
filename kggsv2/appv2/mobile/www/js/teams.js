@@ -19,6 +19,17 @@ function DisplayAllTeams(){
         tr.appendChild(nom);
         tr.appendChild(coach);
 
+        if(user != null && user['seclevel'] == "1"){
+            var edit = document.createElement('td');
+            var text5 = document.createTextNode("Edit");
+            var link = document.createElement('a');
+            link.setAttribute('class', 'button');
+            link.setAttribute('href', "/editT/"+item['IdTeam']);
+            link.appendChild(text5);
+            edit.appendChild(link);
+            tr.appendChild(edit);
+        }
+
         document.getElementById("table-teams-content").appendChild(tr);
     });
 }

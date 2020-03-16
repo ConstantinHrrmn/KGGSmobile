@@ -1,0 +1,221 @@
+<div class="page page-match">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="/programme/" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="if-not-md">Retour</span>
+                </a>
+            </div>
+            <div id="title-char" class="title sliding">KGGS mobile app</div>
+        </div>
+    </div>
+    <div class="page-content">
+
+        <h1>Création d'une match</h1>
+
+        <form id="edits-form" class="list">
+              <input type="hidden" name="what" value="newMatch">
+              <ul>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <select name="day" id="iselecNewMatchDay">
+                                </select> 
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <select name="time" id="iselecNewMatchTime">
+                                </select> 
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <select name="field" id="iselecNewMatchField">
+                                </select> 
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <select name="sport" id="iselecNewMatchSport" onchange="UpdateView()">
+                                </select> 
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <select name="staff" id="iselecNewMatchStaff">
+                                </select> 
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li id="t1-li" style="display: none;">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <select name="t1" id="t1">
+                                    <option value="-1">SELECT</option>
+                                </select> 
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li id="t2-li" style="display: none;">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <select name="t2" id="t2">
+                                    <option value="-1">SELECT</option>
+                                </select> 
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li id="t3-li" style="display: none;">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <select name="t3" id="t3">
+                                    <option value="-1">SELECT</option>
+                                </select> 
+                            </div>
+                        </div>
+                    </div>
+                </li>
+    
+              </ul>
+              <input type="submit" class="button" name="newMatch" id="newMatch" value="Création match">
+        </form>
+
+        <hr>
+
+        <h1>Création du membre du staff</h1>
+
+        <form id="edits-form" class="list">
+            <input type="hidden" name="what" value="newstaff">
+            <ul>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <input type="text" id="iPrenom" name="prenom" placeholder="prénom">
+                    </div>
+                  </div>
+                </div>
+              </li>
+  
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <input type="text" id="iNom" name="name" placeholder="nom">
+                    </div>
+                  </div>
+                </div>
+              </li>
+  
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <input type="text" id="imail" name="mail" placeholder="email">
+                    </div>
+                  </div>
+                </div>
+              </li>
+  
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <input type="text" id="idate" name="date" placeholder="Date de naissance (jjmmaaaa)">
+                    </div>
+                  </div>
+                </div>
+              </li>
+  
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <select name="selec" id="iselec">
+                        <option value="1">Administrateur</option>
+                        <option value="2">Arbitre</option>
+                        <option value="3">Coach</option>
+                        <option value="4">Bénévole</option>
+                      </select> 
+                    </div>
+                  </div>
+                </div>
+              </li>
+  
+            </ul>
+            <input type="submit" class="button" name="newStaff" id="newStaff" value="Création Staff">
+        </form>
+
+        <hr>
+
+        <h1>Création d'une équipe</h1>
+
+        <form id="edits-form" class="list">
+              <input type="hidden" name="what" value="newTeam">
+              <ul>
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-input">
+                        <input type="text" id="inom" name="nom" placeholder="Nom de l'équipe">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+    
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-input">
+                        <input type="number" id="numero" name="numero" min="1" max="18" value="1">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-input">
+                          <select name="selec" id="iselecNewTeam">
+                              <option value="-1">-</option>
+                          </select> 
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+    
+              </ul>
+              <input type="submit" class="button" name="newTeam" id="newTeam" value="Création équipe">
+        </form>
+    </div>
+</div>

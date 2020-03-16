@@ -12,7 +12,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <title>Fire Emblem Charts</title>
+    <title>KGGS Mobile App</title>
 
     <link rel="stylesheet" href="framework7/css/framework7.bundle.min.css">
     <link rel="stylesheet" href="css/icons.css">
@@ -34,11 +34,17 @@
                 </div>
                 <div class="page-content">
                     <div class="list simple-list" id="menu">
-                        <ul>
+                        <ul id="ulmenu">
                             <li><a class="link panel-close" href="/programme/">Programme</a></li>
                             <li><a class="link panel-close" href="/teams/-1">Equipes</a></li>
                             <li><a class="link panel-close" href="/staff/">Staff</a></li>
-                            <li><a class="link panel-close" href="/login/">Login</a></li>
+                            <li id="myadmin" style="display: none;"><a class="link panel-close" href="/admin/">Admin</a></li>
+                            <li id="mylogin"><a class="link panel-close" href="/login/">Login</a></li>   
+                            <li id="mylogout" style="display: none;">
+                                <form action="#" method="get">
+                                    <input type="submit" class="button" name="logout" id="logout" value="logout">
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -107,8 +113,9 @@
 <script src="js/staff.js"></script>
 <script src="js/login.js"></script>
 <script src="js/match.js"></script>
-
-<script src="js/stats.js"></script>
 <script src="js/index.js"></script>
+<script src="js/editStaff.js"></script>
+<script src="js/admin.js"></script>
+
 </body>
 </html>

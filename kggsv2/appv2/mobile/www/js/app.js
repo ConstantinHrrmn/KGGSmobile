@@ -11,7 +11,7 @@ var app = new Framework7({
     data: function () {
         return {};
     },
-    
+
     // App root methods
     methods: {},
 

@@ -4,21 +4,26 @@ routes = [
         templateUrl: './index.html',
         on: {
             pageAfterIn: () => {
-                //displayCharacters();
                 onDeviceReady();
             }
         }
     },
     {
-        name: 'classes',
-        path: '/classes/',
-        templateUrl: './pages/classes.html',
+        name: 'admin',
+        path: '/admin/',
+        templateUrl: './pages/admin.html',
         on: {
             pageAfterIn: () => {
-                displayAllClasses();
+                if(user == null || user['seclevel'] != "1"){
+                    window.location.replace("/");
+                }else{
+                    LoadStaff();
+                    LoadData();
+                }
             }
         }
     },
+
     {
         name: 'match',
         path: '/match/:id',
@@ -26,8 +31,6 @@ routes = [
         on: {
             pageInit: (e, page) => {
                 const id = page.route.params.id;
-                console.log(id);
-
                 $.getJSON(URL_TEAMS_FOR_MATCH + id, function(result) {
                     if(result.length > 0){
                         result.forEach(team =>{
@@ -50,6 +53,15 @@ routes = [
                         card.appendChild(content);
                         document.getElementById("teams").appendChild(card);
                     }
+
+                    if(user != null && user['seclevel'] == "1"){
+                        var text5 = document.createTextNode("Edit");
+                        var link = document.createElement('a');
+                        link.setAttribute('class', 'button');
+                        link.setAttribute('href', "/editM/"+id);
+                        link.appendChild(text5);
+                        document.getElementById("data").appendChild(link);
+                    }
                 });
             }
         }
@@ -66,6 +78,16 @@ routes = [
         }
     },
     {
+        name: 'editmatch',
+        path: '/editM/:id',
+        templateUrl: './pages/editMatch.html',
+        on: {
+            pageInit: (e, page) => {
+                const id = page.route.params.id;
+            }
+        }
+    },
+    {
         name: 'staff',
         path: '/staff/',
         templateUrl: './pages/staff.html',
@@ -73,6 +95,32 @@ routes = [
             pageInit: (e, page) => {
                 const id = page.route.params.id;
                 DisplayStaff();
+            }
+        }
+    },
+    {
+        name: 'editStaff',
+        path: '/editS/:id',
+        templateUrl: './pages/editStaff.html',
+        on: {
+            pageInit: (e, page) => {
+                const id = page.route.params.id;
+                kggsStaff.forEach(staff =>{
+                    if(staff['IdUser'] == id){
+                        StaffToEdit(staff);
+                    }
+                });
+                
+            }
+        }
+    },
+    {
+        name: 'editTeam',
+        path: '/editT/:id',
+        templateUrl: './pages/editTeam.html',
+        on: {
+            pageInit: (e, page) => {
+                const id = page.route.params.id;
             }
         }
     },
@@ -98,17 +146,4 @@ routes = [
             }
         }
     },
-    {
-        path: '/about/',
-        templateUrl: './pages/about.html'
-    },
 ];
-
-function createEventForGraphSwitch(callback) {
-    $$("#btn-graph-column-chart").on("click", (event) => {
-        switchGraph(event, callback);
-    });
-    $$("#btn-graph-spider-web").on("click", (event) => {
-        switchGraph(event, callback);
-    });
-}

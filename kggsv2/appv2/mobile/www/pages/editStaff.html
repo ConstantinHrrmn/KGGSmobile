@@ -1,0 +1,79 @@
+<div class="page page-editStaff">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="if-not-md">Retour</span>
+                </a>
+            </div>
+            <div id="title-char" class="title sliding">KGGS mobile app</div>
+        </div>
+    </div>
+    <div class="page-content">
+        <h1>Modification du staff</h1>
+
+        <form id="edits-form" class="list">
+          <input type="hidden" name="what" value="edit">
+          <input type="hidden" id="iduser" name="id" value="">
+          <ul>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-input">
+                    <input type="text" id="iPrenom" name="prenom" placeholder="prénom">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-input">
+                    <input type="text" id="iNom" name="name" placeholder="nom">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-input">
+                    <input type="text" id="imail" name="mail" placeholder="email">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-input">
+                    <input type="text" id="idate" name="date" placeholder="Date de naissance (jjmmaaaa)">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-input">
+                    <select name="selec" id="iselec">
+                      <option value="1">Administrateur</option>
+                      <option value="2">Arbitre</option>
+                      <option value="3">Coach</option>
+                      <option value="4">Bénévole</option>
+                    </select> 
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+          <input type="submit" class="button" name="modifier" id="modifier" value="modifier">
+        </form>
+    </div>
+</div>

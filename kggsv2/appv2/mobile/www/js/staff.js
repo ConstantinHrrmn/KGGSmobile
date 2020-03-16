@@ -2,7 +2,6 @@ function DisplayStaff(){
     var staff = kggsStaff;
 
     staff.forEach(staff =>{
-        console.log(staff);
 
         var tr = document.createElement('tr');
 
@@ -29,6 +28,17 @@ function DisplayStaff(){
         tr.appendChild(prenom);
         tr.appendChild(privilege);
         tr.appendChild(equipe);
+
+        if(user != null && user['seclevel'] == "1"){
+            var edit = document.createElement('td');
+            var text5 = document.createTextNode("Edit");
+            var link = document.createElement('a');
+            link.setAttribute('class', 'button');
+            link.setAttribute('href', "/editS/"+staff['IdUser']);
+            link.appendChild(text5);
+            edit.appendChild(link);
+            tr.appendChild(edit);
+        }
 
         document.getElementById("table-staff-content").appendChild(tr);
     });
