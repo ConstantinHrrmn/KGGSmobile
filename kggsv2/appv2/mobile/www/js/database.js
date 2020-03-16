@@ -9,7 +9,7 @@ const URL_TEAMS_FOR_MATCH = "http://myviewvision.ch/other/kggsmobile/program/mat
 const BASE_URL_STAFF = "http://myviewvision.ch/other/kggsmobile/user/";
 const BASE_LOGIN_URL = "http://myviewvision.ch/other/kggsmobile/user/get/index.php/?login&";
 const BASE_MATCH_URL = "http://myviewvision.ch/other/kggsmobile/match/set/";
-
+const BASE_SCORE_URL = "http://myviewvision.ch/other/kggsmobile/match/update/";
 const BASE_DAYS_URL = "http://myviewvision.ch/other/kggsmobile/data/days/";
 const BASE_TIMES_URL = "http://myviewvision.ch/other/kggsmobile/data/times/";
 const BASE_FIELDS_URL = "http://myviewvision.ch/other/kggsmobile/data/fields/";
@@ -25,11 +25,28 @@ var times = JSON.parse(localStorage.getItem("fields"));
 var days = JSON.parse(localStorage.getItem("days"));
 var types = JSON.parse(localStorage.getItem("types"));
 
-console.log(user);
+function isOnline() {
+    const networkState = (navigator.connection) ? navigator.connection.type : null;
+
+    if (networkState != null && networkState != "none") {
+        return true;
+    }
+    return false;
+}
 
 if(user != null){
     IsConnected();
 }
+
+// For debugging on PC
+//UpdateAll();
+
+/*
+if(isOnline()){
+    UpdateAll();
+}else{
+    document.addEventListener("online", UpdateAll, false);
+}*/
 
 GetTeams();
 GetProgram();
@@ -39,22 +56,9 @@ GetDays();
 GetFields();
 GetSports();
 
-setInterval(GetTeams, 10000);
-setInterval(GetProgram, 10000);
-setInterval(GetStaff, 10000);
-
-/*
-if (kggsTeams == null){
-    GetTeams();
-}
-
-if (kggsProgram == null){
-    GetProgram();
-}
-
-if(kggsStaff == null){
-    GetStaff();
-}*/
+setInterval(GetTeams, 3000);
+setInterval(GetProgram, 3000);
+setInterval(GetStaff, 3000);
 
 function updateData(table ,data) {
     if (data != null && Object.keys(data).length > 0) {
@@ -131,6 +135,7 @@ function GetTeams(){
     $.getJSON(BASE_URL_TEAMS + "get/?all", function(result) {
         updateData("kggsTeams",result);
         kggsTeams = result;
+        console.log("Teams updated");
     });
 }
 
@@ -138,6 +143,7 @@ function GetTimes(){
     $.getJSON(BASE_TIMES_URL, function(result) {
         updateData("times",result);
         times = result;
+        console.log("Times updated");
     });
 }
 
@@ -145,6 +151,7 @@ function GetFields(){
     $.getJSON(BASE_FIELDS_URL, function(result) {
         updateData("fields",result);
         fields = result;
+        console.log("Fields updated");
     });
 }
 
@@ -152,6 +159,7 @@ function GetDays(){
     $.getJSON(BASE_DAYS_URL, function(result) {
         updateData("days",result);
         days = result;
+        console.log("Days updated");
     });
 }
 
@@ -159,6 +167,7 @@ function GetSports(){
     $.getJSON(BASE_TYPE_URL, function(result) {
         updateData("types",result);
         types = result;
+        console.log("Sports updated");
     });
 }
 
@@ -182,5 +191,26 @@ function CreateGame(day, time, field, sport, staff, t1, t2, t3){
     var url = BASE_MATCH_URL + "?day=" + day + "&time=" + time + "&field=" + field + "&sport=" + sport + "&staff=" + staff + "&t1=" + t1 + "&t2=" + t2 + "&t3=" + t3;
     $.getJSON(url, function(result) {
         GetProgram();
+    });
+}
+
+function UpdateScore(id, t1, t2, t3){
+    var match = JSON.parse(localStorage.getItem(id));
+    data = [t1, t2, t3];
+    var index = 0;
+    console.log(match);
+    
+    match.forEach(team => {
+        console.log(team['id'] + " --> "+data[index]);
+        UpdateScoreGame(id, team['id'], data[index])
+        index++;
+    });
+
+    
+}
+
+function UpdateScoreGame(gameid, teamid, score){
+    var url = BASE_SCORE_URL+ "?game="+gameid+"&team="+teamid+"&score="+score;
+    $.getJSON(url, function(result) {
     });
 }

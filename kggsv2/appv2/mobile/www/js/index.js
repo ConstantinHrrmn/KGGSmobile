@@ -45,7 +45,6 @@ if(data.length>0 && data[2] == "connexion"){
     t2 = data[7];
     t3 = data[8];
     CreateGame(day,time,field,sport,staff,t1,t2,t3);
+}else if(data[0] == "updateScore" && user['seclevel'] == 1){
+    UpdateScore(data[1], data[2], data[3], data[4]);
 }
-
-
-
