@@ -56,9 +56,9 @@ GetDays();
 GetFields();
 GetSports();
 
-setInterval(GetTeams, 3000);
-setInterval(GetProgram, 3000);
-setInterval(GetStaff, 3000);
+setInterval(GetTeams, 1000);
+setInterval(GetProgram, 1000);
+setInterval(GetStaff, 1000);
 
 function updateData(table ,data) {
     if (data != null && Object.keys(data).length > 0) {
@@ -205,8 +205,6 @@ function UpdateScore(id, t1, t2, t3){
         UpdateScoreGame(id, team['id'], data[index])
         index++;
     });
-
-    
 }
 
 function UpdateScoreGame(gameid, teamid, score){

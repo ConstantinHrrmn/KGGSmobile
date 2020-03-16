@@ -4,8 +4,14 @@ function LoadStaff(){
         option.setAttribute('value', staff['IdUser']);
         var text = document.createTextNode(staff['prenom'] + " " + staff['nom']);
         option.appendChild(text);
-        document.getElementById('iselecNewTeam').appendChild(option);
         document.getElementById('iselecNewMatchStaff').appendChild(option);
+    });
+    kggsStaff.forEach(staff => {
+        var option = document.createElement('option');
+        option.setAttribute('value', staff['IdUser']);
+        var text = document.createTextNode(staff['prenom'] + " " + staff['nom']);
+        option.appendChild(text);
+        document.getElementById('iselecNewTeam').appendChild(option);
     });
 }
 
